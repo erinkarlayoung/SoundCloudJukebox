@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SoundCloud Jukebox</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.0.0/nouislider.css" />
+	<link rel="stylesheet" type="text/css" href="SoundCloud-Jukebox.css" />
+</head>
+<body>
+	<h1>JUKEBOX</h1>
+	<div id="songs"></div>
+	 <div id="jukebox">
+		<div class="info">
+			<h3 class="artist"</h3>
+			<div class="track">
+				<span id="song"></span> 
+			</div>
+		</div>
+		<div class="controls">
+			<i class="pause fa fa-pause fa-2x"></i>
+			<i class="play fa fa-play fa-2x"></i>
+			<i class="stop fa fa-stop fa-2x"></i>
+			<i class="next fa fa-forward fa-2x"></i>
+			<div class="volume"></div>
+		</div>
+	</div><!--#jukebox-->
+	<style>
+		body{
+			background-image: url("background.png");
+		}
+	</style>
+	<img id="img" src="RecordStill.png">
+	<img id="gif" src="Record.gif">
+	<ol id="results"></ol>
+	<script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.0.0/nouislider.js"></script>
+	<script src="SoundCloud-Jukebox.js"></script>
+</body>
+</html>

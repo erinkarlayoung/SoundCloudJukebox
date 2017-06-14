@@ -1,0 +1,51 @@
+body {
+	font-size: 30px;
+	margin: 10px auto 0;
+	padding: 0 20px;
+	width: 80%
+	height: 80%;
+	text-align: center;
+	font-family: "Futura";
+	font-color: white;
+	padding-top: 275px;
+	background-image: tile;
+}
+
+.fa {
+	cursor: pointer;
+}
+
+.fa {
+	cursor: pointer;
+	padding: 10px;
+}
+
+#img {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	width: 450px;
+}
+
+#gif {
+	position:absolute;
+	bottom: 10px;
+	right: 10px;
+	width: 450px;
+	display: none;
+}
+
+#jukebox {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+#playlist {
+	width: 50%;
+	margin: 20px auto;
+	margin-bottom: 20px;
+	height: 250px;
+	overflow: scroll;
+	font-size: 30px;
+	border: 1px solid #000;
+}

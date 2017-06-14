@@ -1,0 +1,67 @@
+
+function Song( id, title ) {
+  this.id = id;
+  this.title = title;
+}
+function Jukebox(){ 
+  this.songs = []; 
+  this.players = []; 
+  this.currentSong = 0;
+  this.SC = SC;
+  this.SC.initialize({
+    client_id: 'TafyfEoJwoQ9VgKceKprmsL86bqynS5G'
+  });
+}
+
+Jukebox.prototype.addSong = function(){
+  for( let i=0; i<arguments.length; i++){
+    this.songs.push( arguments[i] );
+  }ß
+}
+
+Jukebox.prototype.play = function(){
+  console.log( "in play", this );
+  const self = this;
+  let player = this.players[this.currentSong],
+      song = this.songs[this.currentSong];
+
+  if( player ) {
+    console.log( "player detected" );
+    player.play();
+
+  } else {
+    console.log( "no player detected" );
+
+    this.SC.stream('/tracks/'+song.id).then(function(p){
+      console.log( "got player", p);
+      self.players[self.currentSong] = p;
+      console.log( self.players );
+      self.play();
+    });
+  }
+}
+
+Jukebox.prototype.pause = function(){
+
+}
+
+Jukebox.prototype.stop = function(){
+  // to do: ...
+}
+// advance to next song
+Jukebox.prototype.next = function(){
+  // do too: ...
+}
+// go back one song
+Jukebox.prototype.back = function(){
+  // to do: ..
+}
+
+var myJukebox = new Jukebox();
+myJukebox.addSong(new Song('45062705', 'Hotel Dennis'), new Song('223228432',"It's strange"), new Song('29366957',"Mac Miller Heat Wave"));
+
+document.addEventListener("DOMContentLoaded",function(){
+  document.querySelector('.play').addEventListener('click',function(event){
+    myJukebox.play();
+  });
+});
